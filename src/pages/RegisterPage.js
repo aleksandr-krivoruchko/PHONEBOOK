@@ -1,11 +1,18 @@
 import { useState } from 'react';
-import { Btn, FormStyle, Label, Input } from './FormStyle.styled';
-import { useAddContact } from '../../redux/contacts/contacts-slice';
+import { useDispatch } from 'react-redux';
+import {
+  Btn,
+  FormStyle,
+  Label,
+  Input,
+} from '../components/Form/FormStyle.styled';
+import authOperations from '../redux/auth/auth-operations';
 
-export function Form() {
+export function RegisterPage() {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  const addContact = useAddContact();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   function handleChange(e) {
     const { name, value } = e.currentTarget;
@@ -15,8 +22,12 @@ export function Form() {
         setName(value);
         break;
 
-      case 'number':
-        setNumber(value);
+      case 'email':
+        setEmail(value);
+        break;
+
+      case 'password':
+        setPassword(value);
         break;
 
       default:
@@ -26,15 +37,14 @@ export function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    addContact(name, number);
-
+    dispatch(authOperations.register({ name, email, password }));
     reset();
   }
 
   function reset() {
     setName('');
-    setNumber('');
+    setEmail('');
+    setPassword('');
   }
 
   return (
@@ -54,19 +64,30 @@ export function Form() {
       </Label>
 
       <Label>
-        Number
+        Email
         <Input
-          value={number}
+          value={email}
           onChange={handleChange}
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          type="email"
+          name="email"
           required
           autoComplete="off"
         />
       </Label>
-      <Btn type="submit">Add contact</Btn>
+
+      <Label>
+        Password
+        <Input
+          value={password}
+          onChange={handleChange}
+          type="password"
+          name="password"
+          required
+          autoComplete="off"
+        />
+      </Label>
+
+      <Btn type="submit">Sign up</Btn>
     </FormStyle>
   );
 }

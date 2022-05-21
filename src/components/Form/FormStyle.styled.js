@@ -5,6 +5,7 @@ export const FormStyle = styled.form`
   border: 2px solid yellow;
   padding: 20px;
   background-color: transparent;
+  margin-bottom: 20px;
 `;
 
 export const Label = styled.label`
@@ -17,7 +18,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   display: block;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid yellow;
