@@ -10,8 +10,10 @@ export const fetchContacts = createAsyncThunk(
       const response = await contactsAPI.fetchContacts();
       return response;
     } catch (err) {
-      toast(`${err.message}. Try reloading the page`);
-      return rejectWithValue(err.response.statusText);
+      toast.error(
+        `You are not ${err.response.statusText.toLowerCase()}.Please log in :)`
+      );
+      return rejectWithValue(err.response);
     }
   }
 );
@@ -24,7 +26,7 @@ export const addContact = createAsyncThunk(
       return newContact;
     } catch (err) {
       toast(`${err.response.statusText}.Register or log in`);
-      return rejectWithValue(err.response.statusText);
+      return rejectWithValue(err.response);
     }
   }
 );
@@ -35,8 +37,8 @@ export const removeContact = createAsyncThunk(
       const removedContact = await contactsAPI.removeContact(contactId);
       return removedContact;
     } catch (err) {
-      toast(`${err.message}. Try reloading the page`);
-      return rejectWithValue(err.response.statusText);
+      toast(`${err.response.statusText}. Try reloading the page`);
+      return rejectWithValue(err.response);
     }
   }
 );

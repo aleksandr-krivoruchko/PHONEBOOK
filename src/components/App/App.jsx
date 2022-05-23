@@ -12,6 +12,8 @@ import { LoginPage } from '../../pages/LoginPage';
 import { RegisterPage } from '../../pages/RegisterPage';
 import { HomePage } from '../../pages/HomePage';
 import { NotFoundPage } from '../../pages/NotFoundPage';
+import { PrivateRoute } from '../../pages/PrivateRoute';
+import { PublicRoute } from '../../pages/PublicRoute';
 
 export function App() {
   const dispatch = useDispatch();
@@ -36,29 +38,35 @@ export function App() {
           <Route
             path="contacts"
             element={
-              <Section title="contacts page">
-                <ContactsPage />
-              </Section>
-            }
-          />
-          <Route
-            path="register"
-            index
-            element={
-              <Section title="registration page">
-                <RegisterPage />
-              </Section>
+              <PrivateRoute navigateTo="/login">
+                <Section title="contacts page">
+                  <ContactsPage />
+                </Section>
+              </PrivateRoute>
             }
           />
 
           <Route
             path="login"
             element={
-              <Section title="login page">
-                <LoginPage />
-              </Section>
+              <PublicRoute restricted navigateTo="/contacts">
+                <Section title="login page">
+                  <LoginPage />
+                </Section>
+              </PublicRoute>
             }
           />
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted navigateTo="/login">
+                <Section title="register page">
+                  <RegisterPage />
+                </Section>
+              </PublicRoute>
+            }
+          />
+
           <Route path="*" element={<NotFoundPage />}></Route>
         </Route>
       </Routes>
