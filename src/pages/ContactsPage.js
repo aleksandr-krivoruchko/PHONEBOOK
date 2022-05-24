@@ -10,7 +10,7 @@ export function ContactsPage() {
     <>
       <Form />
       <Filter />
-      <ContactsList></ContactsList>
+      <ContactsList />
       <ToastContainer position="top-left" autoClose={3000} />
     </>
   );

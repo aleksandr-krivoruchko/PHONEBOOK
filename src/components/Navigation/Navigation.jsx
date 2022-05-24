@@ -13,9 +13,11 @@ export function Navigation() {
           <NavLink to="/" className="link">
             Home
           </NavLink>
-          <NavLink to="/contacts" className="link">
-            Contacts
-          </NavLink>
+          {isLoggedIn && (
+            <NavLink to="/contacts" className="link">
+              Contacts
+            </NavLink>
+          )}
         </div>
         <div>
           {isLoggedIn ? (

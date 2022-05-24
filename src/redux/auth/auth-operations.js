@@ -22,7 +22,7 @@ const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast(`${error.message}. Try reloading the page`);
+      toast(`${error.message}. Try once more`);
       return rejectWithValue(error.response.statusText);
     }
   }
@@ -36,7 +36,7 @@ const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast(`${error.message}. Try reloading the page`);
+      toast(`${error.message}. Try once more`);
       return rejectWithValue(error.response.statusText);
     }
   }
@@ -49,7 +49,7 @@ const logOut = createAsyncThunk(
       await axios.post('/users/logout');
       token.unset();
     } catch (error) {
-      toast(`${error.message}. Try reloading the page`);
+      toast(`${error.message}. Try once more`);
       return rejectWithValue(error.response.statusText);
     }
   }
@@ -71,7 +71,7 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      toast(`${error.message}. Try reloading the page`);
+      toast(`${error.message}. Try once more`);
       return thunkAPI.rejectWithValue(error.response.statusText);
     }
   }

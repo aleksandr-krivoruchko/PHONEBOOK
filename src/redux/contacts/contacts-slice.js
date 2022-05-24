@@ -1,21 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkExistingContact } from '../../services/checkContact';
 import * as contactsOperations from '../contacts/contactsOperations';
-
-export const contactsSlice = createSlice({
-  name: 'contacts',
-  initialState: [],
-  reducers: {
-    add(state, action) {
-      state.push(action.payload);
-    },
-    remove(state, action) {
-      return state.filter(item => item.id !== action.payload);
-    },
-  },
-});
-export const { add, remove } = contactsSlice.actions;
 
 //!=============Selectors==========================
 export const getContacts = state => state.contacts.items;
@@ -33,7 +18,6 @@ export const useFilter = () => {
       name.toLowerCase().includes(normalizedFilter)
     );
   }
-
   return {
     filteredContacts: filterContacts(),
     deleteContact: id => dispatch(contactsOperations.removeContact(id)),
