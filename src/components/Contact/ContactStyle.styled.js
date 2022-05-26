@@ -2,16 +2,18 @@ import styled from '@emotion/styled';
 
 export const ContactStyle = styled.li`
   display: flex;
-  color: yellow;
+  color: #00b9ff;
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
 `;
 
 export const ButtonStyle = styled.button`
   margin-right: 20px;
-  color: yellow;
+  color: blue;
   background-color: transparent;
-  border-color: yellow;
+  border-color: blue;
   border-radius: 50%;
   cursor: pointer;
   outline: none;

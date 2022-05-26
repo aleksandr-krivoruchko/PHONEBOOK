@@ -25,6 +25,9 @@ export const Input = styled.input`
   outline: none;
   color: yellow;
   caret-color: yellow;
+  &:focus {
+    border-bottom-color: transparent;
+  }
 `;
 
 export const Btn = styled.button`

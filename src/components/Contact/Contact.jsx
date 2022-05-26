@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import { ContactStyle, ButtonStyle } from './ContactStyle.styled';
+import { ContactStyle } from './ContactStyle.styled';
+import { ImBin } from 'react-icons/im';
 
 export function Contact({ number, name, id, deleteContact }) {
   return (
     <ContactStyle id={id}>
-      <ButtonStyle type="button" onClick={() => deleteContact(id)}>
-        X
-      </ButtonStyle>
       <p>{`${name}: ${number}`}</p>
+      <ImBin className="delete-icon" onClick={() => deleteContact(id)} />
     </ContactStyle>
   );
 }

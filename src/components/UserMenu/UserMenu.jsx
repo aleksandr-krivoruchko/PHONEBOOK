@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/auth-operations';
-import avatar from '../../img/avatar.jpg';
+import ukr from '../../img/ukr.png';
 
 export function UserMenu() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -11,8 +11,8 @@ export function UserMenu() {
   return (
     isLoggedIn && (
       <div className="user">
-        <img src={avatar} alt="" width="30px" />
-        <p>{`Greetings, ${userName}`}</p>
+        <img className="img" src={ukr} alt="" width="40px" />
+        <p>{`Greetings, ${userName.toUpperCase()}`}</p>
         <button
           type="button"
           className="logout"
