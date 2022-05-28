@@ -29,7 +29,7 @@ export function Form() {
 
     addContact(name, number);
 
-    //  reset();
+    reset();
   }
 
   function reset() {

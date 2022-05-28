@@ -41,11 +41,11 @@ export function RegisterPage() {
     //  reset();
   }
 
-  function reset() {
-    setName('');
-    setEmail('');
-    setPassword('');
-  }
+  //   function reset() {
+  //     setName('');
+  //     setEmail('');
+  //     setPassword('');
+  //   }
 
   return (
     <FormStyle onSubmit={handleSubmit}>

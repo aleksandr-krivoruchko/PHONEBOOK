@@ -37,10 +37,10 @@ export function LoginPage() {
     //  reset();
   }
 
-  function reset() {
-    setEmail('');
-    setPassword('');
-  }
+  //   function reset() {
+  //     setEmail('');
+  //     setPassword('');
+  //   }
 
   return (
     <FormStyle onSubmit={handleSubmit}>
