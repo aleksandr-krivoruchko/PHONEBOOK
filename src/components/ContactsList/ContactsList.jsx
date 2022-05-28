@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
 import * as contactsOperations from '../../redux/contacts/contactsOperations';
-import { useFilter } from '../../redux/contacts/contacts-slice';
+import { useFilter } from '../../redux/contacts/contactsSlice';
 
 import { Contact } from '../Contact/Contact';
 

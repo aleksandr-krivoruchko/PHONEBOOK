@@ -3,6 +3,7 @@ import { ContactStyle } from './ContactStyle.styled';
 import { ImBin } from 'react-icons/im';
 
 export function Contact({ number, name, id, deleteContact }) {
+  console.log('id in contact', id);
   return (
     <ContactStyle id={id}>
       <p>{`${name}: ${number}`}</p>

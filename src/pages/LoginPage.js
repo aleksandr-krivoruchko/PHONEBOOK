@@ -34,7 +34,7 @@ export function LoginPage() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(authOperations.logIn({ email, password }));
-    reset();
+    //  reset();
   }
 
   function reset() {

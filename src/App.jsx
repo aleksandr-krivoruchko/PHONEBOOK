@@ -1,25 +1,24 @@
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/auth-operations';
 
-import { Section } from '../Section/Section';
-import { Layout } from '../Layout/Layout';
-import { Navigation } from '../Navigation/Navigation';
-import { Loading } from '../Loading';
-import { NotFoundPage } from '../../pages/NotFoundPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { ContactsPage } from '../../pages/ContactsPage';
-import { LoginPage } from '../../pages/LoginPage';
-import { RegisterPage } from '../../pages/RegisterPage';
-import { HomePage } from '../../pages/HomePage';
+import authOperations from './redux/auth/auth-operations';
 
-import { PrivateRoute } from '../../pages/PrivateRoute';
-import { PublicRoute } from '../../pages/PublicRoute';
-// const HomePage = lazy(() => import('../../pages/HomePage'));
-// const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
-// const LoginPage = lazy(() => import('../../pages/LoginPage'));
-// const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
+import { Section } from './components/Section/Section';
+import { Layout } from './components/Layout/Layout';
+import { Navigation } from './components/Navigation/Navigation';
+
+import { ContactsPage } from './pages/ContactsPage';
+import { LoginPage } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
+import { HomePage } from './pages/HomePage';
+import { NotFoundPage } from './pages/NotFoundPage';
+
+import { PrivateRoute } from './pages/PrivateRoute';
+import { PublicRoute } from './pages/PublicRoute';
 
 export function App() {
   const dispatch = useDispatch();
@@ -31,6 +30,8 @@ export function App() {
   return (
     <>
       <Navigation />
+      <ToastContainer position="top-left" autoClose={3000} />
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route

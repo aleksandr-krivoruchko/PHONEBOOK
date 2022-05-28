@@ -4,12 +4,10 @@ import { fetchContacts, addContact, removeContact } from './contactsOperations';
 const items = createReducer([], {
   [fetchContacts.fulfilled]: (_, action) => action.payload,
   [addContact.fulfilled]: (state, action) => {
-    console.log(action.payload);
-
     return [...state, action.payload];
   },
   [removeContact.fulfilled]: (state, action) => {
-    console.log(action.payload);
+    console.log('reducer', action.payload.id);
     return state.filter(item => item.id !== action.payload.id);
   },
 });

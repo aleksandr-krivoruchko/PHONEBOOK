@@ -22,8 +22,8 @@ const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast(`${error.message}. Try once more`);
-      return rejectWithValue(error.response.statusText);
+      toast.error(`${error.response.data.message}. Try once more`);
+      return rejectWithValue(error.response);
     }
   }
 );
@@ -36,7 +36,7 @@ const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast(`${error.message}. Try once more`);
+      toast.error(`${error.response.statusText}. Try once more`);
       return rejectWithValue(error.response.statusText);
     }
   }
@@ -49,7 +49,7 @@ const logOut = createAsyncThunk(
       await axios.post('/users/logout');
       token.unset();
     } catch (error) {
-      toast(`${error.message}. Try once more`);
+      toast(`${error.response.statusText}. Try once more`);
       return rejectWithValue(error.response.statusText);
     }
   }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Btn, FormStyle, Label, Input } from './FormStyle.styled';
-import { useAddContact } from '../../redux/contacts/contacts-slice';
+import { useAddContact } from '../../redux/contacts/contactsSlice';
 
 export function Form() {
   const [name, setName] = useState('');
@@ -29,7 +29,7 @@ export function Form() {
 
     addContact(name, number);
 
-    reset();
+    //  reset();
   }
 
   function reset() {

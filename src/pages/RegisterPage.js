@@ -38,7 +38,7 @@ export function RegisterPage() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-    reset();
+    //  reset();
   }
 
   function reset() {

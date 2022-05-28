@@ -33,8 +33,11 @@ export const addContact = createAsyncThunk(
 export const removeContact = createAsyncThunk(
   'contacts/removeContact',
   async (contactId, { rejectWithValue }) => {
+    console.log('operation', contactId);
+
     try {
       const removedContact = await contactsAPI.removeContact(contactId);
+      console.log('removedContact', removedContact);
       return removedContact;
     } catch (err) {
       toast(`${err.response.statusText}. Try reloading the page`);
