@@ -7,8 +7,7 @@ const items = createReducer([], {
     return [...state, action.payload];
   },
   [removeContact.fulfilled]: (state, action) => {
-    console.log('reducer', action.payload.id);
-    return state.filter(item => item.id !== action.payload.id);
+    return state.filter(item => item.id !== action.payload);
   },
 });
 
