@@ -1,15 +1,15 @@
 {
-	"name": "PHONEBOOK",
+	"name": "goit-react-hw-08-phonebook",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://aleksandr-krivoruchko.github.io/PHONEBOOK",
+	"homepage": "https://aleksandr-krivoruchko.github.io/goit-react-hw-08-phonebook",
 	"dependencies": {
 		"@coreui/react": "^4.2.1",
 		"@emotion/react": "^11.8.1",
 		"@emotion/styled": "^11.8.1",
 		"@reduxjs/toolkit": "^1.8.1",
-		"@testing-library/jest-dom": "^5.16.1",
-		"@testing-library/react": "^12.1.2",
+		"@testing-library/jest-dom": "^5.16.1",Z
+    "@testing-library/react": "^12.1.2",
 		"@testing-library/user-event": "^13.5.0",
 		"axios": "^0.27.2",
 		"modern-normalize": "^1.0.0",
