@@ -23,6 +23,8 @@ export const addContact = createAsyncThunk(
   async (contact, { rejectWithValue }) => {
     try {
       const newContact = await contactsAPI.addContact(contact);
+      console.log('in oper', newContact);
+
       return newContact;
     } catch (err) {
       toast(`${err.response.statusText}.Register or log in`);
@@ -30,6 +32,22 @@ export const addContact = createAsyncThunk(
     }
   }
 );
+
+export const updateContact = createAsyncThunk(
+  'contacts/updateContact',
+  async (contactId, { rejectWithValue }) => {
+    try {
+      const updatedContact = await contactsAPI.updateContact(contactId);
+      console.log('in oper', updatedContact);
+
+      return updatedContact;
+    } catch (err) {
+      toast(`${err.response.statusText}. Try reloading the page`);
+      return rejectWithValue(err.response);
+    }
+  }
+);
+
 export const removeContact = createAsyncThunk(
   'contacts/removeContact',
   async (contactId, { rejectWithValue }) => {

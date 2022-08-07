@@ -38,33 +38,26 @@ export function RegisterPage() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
-    //  reset();
   }
-
-  //   function reset() {
-  //     setName('');
-  //     setEmail('');
-  //     setPassword('');
-  //   }
 
   return (
     <FormStyle onSubmit={handleSubmit}>
       <Label>
-        Name
+        Ім'я
         <Input
           value={name}
           onChange={handleChange}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          title="Ім’я може містити лише літери, апостроф, тире та пробіли. Наприклад, Тарас Шевченко"
           required
           autoComplete="off"
         />
       </Label>
 
       <Label>
-        Email
+        Пошта
         <Input
           value={email}
           onChange={handleChange}
@@ -76,7 +69,7 @@ export function RegisterPage() {
       </Label>
 
       <Label>
-        Password
+        Пароль
         <Input
           value={password}
           onChange={handleChange}
@@ -87,7 +80,7 @@ export function RegisterPage() {
         />
       </Label>
 
-      <Btn type="submit">Sign up</Btn>
+      <Btn type="submit">Зареєструватись</Btn>
     </FormStyle>
   );
 }

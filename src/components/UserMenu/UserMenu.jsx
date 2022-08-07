@@ -12,12 +12,12 @@ export function UserMenu() {
     isLoggedIn && (
       <div className="user">
         <img className="img" src={ukr} alt="" width="40px" />
-        <p>{`Greetings, ${userName.toUpperCase()}`}</p>
+        <p>{`Ласкаво просимо, ${userName.toUpperCase()}`}</p>
         <button
           type="button"
           className="logout"
           onClick={() => dispatch(authOperations.logOut())}>
-          LogOut
+          Вийти
         </button>
       </div>
     )

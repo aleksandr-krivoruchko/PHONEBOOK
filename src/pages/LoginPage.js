@@ -34,18 +34,12 @@ export function LoginPage() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(authOperations.logIn({ email, password }));
-    //  reset();
   }
-
-  //   function reset() {
-  //     setEmail('');
-  //     setPassword('');
-  //   }
 
   return (
     <FormStyle onSubmit={handleSubmit}>
       <Label>
-        Email
+        Пошта
         <Input
           value={email}
           onChange={handleChange}
@@ -57,7 +51,7 @@ export function LoginPage() {
       </Label>
 
       <Label>
-        Password
+        Пароль
         <Input
           value={password}
           onChange={handleChange}
@@ -67,7 +61,7 @@ export function LoginPage() {
           autoComplete="off"
         />
       </Label>
-      <Btn type="submit">Sign in</Btn>
+      <Btn type="submit">Увійти</Btn>
     </FormStyle>
   );
 }

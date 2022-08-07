@@ -46,7 +46,7 @@ export function App() {
             path="contacts"
             element={
               <PrivateRoute navigateTo="/login">
-                <Section title="contacts page">
+                <Section title="Сторінка контактів">
                   <ContactsPage />
                 </Section>
               </PrivateRoute>
@@ -57,7 +57,7 @@ export function App() {
             path="login"
             element={
               <PublicRoute restricted navigateTo="/contacts">
-                <Section title="login page">
+                <Section title="Сторінка входу">
                   <LoginPage />
                 </Section>
               </PublicRoute>
@@ -67,7 +67,7 @@ export function App() {
             path="register"
             element={
               <PublicRoute restricted navigateTo="/login">
-                <Section title="register page">
+                <Section title="Сторінка реєстрації">
                   <RegisterPage />
                 </Section>
               </PublicRoute>

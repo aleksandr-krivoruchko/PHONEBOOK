@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
 export const SectionStyle = styled.div`
-  width: 500px;
+  width: 400px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Title = styled.h1`

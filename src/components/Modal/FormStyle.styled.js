@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
 
 export const FormStyle = styled.form`
-  width: 100%;
-  border: 2px solid yellow;
+  max-width: 100%;
   padding: 20px;
   background-color: transparent;
-  margin-bottom: 20px;
 `;
 
 export const Label = styled.label`

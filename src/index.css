@@ -145,10 +145,3 @@ code {
   color: #ffb800;
   margin-right: 5px;
 }
-.delete-icon {
-  margin-left: 20px;
-  cursor: pointer;
-}
-.delete-icon:hover {
-  color: red;
-}

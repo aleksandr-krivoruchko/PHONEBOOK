@@ -17,13 +17,13 @@ export function Navigation() {
         <div>
           <NavLink to="/" className="link">
             <ImHome3 />
-            Home
+            Головна
           </NavLink>
           {isLoggedIn && (
             <>
               <NavLink to="/contacts" className="link">
                 <ImAddressBook />
-                Contacts
+                Контакти
               </NavLink>
             </>
           )}
@@ -35,11 +35,11 @@ export function Navigation() {
             <>
               <NavLink to="/register" className="link">
                 <ImUserPlus />
-                Register
+                Реєстрація
               </NavLink>
               <NavLink to="/login" className="link">
                 <ImUserCheck />
-                Login
+                Увійти
               </NavLink>
             </>
           )}

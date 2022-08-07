@@ -41,3 +41,20 @@ export const useAddContact = () => {
 
   return addContact;
 };
+
+export const useUpdateContact = () => {
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  function updateContact(id, name, number) {
+    const contact = contacts.find(c => c.id === id);
+    const newContact = {
+      ...contact,
+      name,
+      number,
+    };
+    dispatch(contactsOperations.updateContact(newContact));
+  }
+
+  return updateContact;
+};

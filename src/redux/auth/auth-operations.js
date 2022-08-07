@@ -22,7 +22,7 @@ const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast.error(`${error.response.data.message}. Try once more`);
+      toast.error(`${error.response.data}. Try once more`);
       return rejectWithValue(error.response);
     }
   }

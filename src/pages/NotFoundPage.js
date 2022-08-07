@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export function NotFoundPage() {
   return (
     <h1>
-      This page doesn't exist.Go <Link to="/">Home</Link>
+      Цієї сторінки не існує. Перейти до<Link to="/">Головна</Link>
     </h1>
   );
 }

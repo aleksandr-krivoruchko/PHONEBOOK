@@ -7,7 +7,7 @@ export function Filter() {
 
   return (
     <Label>
-      Find contacts by name
+      Знайдіть контакти за іменем
       <Input onChange={e => dispatch(filter(e.target.value))} type="text" />
     </Label>
   );
